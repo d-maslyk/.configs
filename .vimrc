@@ -51,16 +51,16 @@ set wrap "Wrap lines
 set laststatus=1
 
 set guicursor=
-set exrc
+
+" set exrc
 set relativenumber
-set hidden
-set noerrorbells
+" set hidden
 set noswapfile
 set nobackup
 set incsearch
 set scrolloff=8
-set noshowmode
-set signcolumn=yes
-set completeopt=menuone,noinsert,noselect
+" set noshowmode
+" set signcolumn=yes
+" set completeopt=menuone,noinsert,noselect
 
 autocmd FileType yaml setlocal ai ts=2 sw=2 et nu "colorcolumn=1,3,5,7,9,11,13
