@@ -22,11 +22,12 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme slate 
+    colorscheme gruvbox 
 catch
 endtry
 
-" set background=dark
+" or dark to change gruvbox color mode also
+set background=light
 
 set expandtab
 
@@ -64,3 +65,48 @@ set scrolloff=8
 " set completeopt=menuone,noinsert,noselect
 
 autocmd FileType yaml setlocal ai ts=2 sw=2 et nu "colorcolumn=1,3,5,7,9,11,13
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 | 
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab | 
+    \ set autoindent |
+    \ set fileformat=unix
+
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
+
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+
+""" vundle stufff??
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+" ...
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+nnoremap <C-p> :Files<Cr>

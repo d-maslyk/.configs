@@ -140,7 +140,7 @@ alias sound="pavucontrol"
 
 function pyserver() {
 #py3
-#python -m http.server &
+python -m http.server 
 }
 openports() {
     local port=$1
@@ -151,7 +151,7 @@ openports() {
 
 
 gc() {
-    git commit -am $1
+    git commit -am "$1"
 }
 gp() {
     git push
